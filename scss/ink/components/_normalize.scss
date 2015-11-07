@@ -62,6 +62,7 @@ $hr-height: 1px !default;
       text-decoration:none; 
       -ms-interpolation-mode: bicubic;
       width: auto;
+      height: auto;
       max-width: 100%; 
       float: left; 
       clear: both; 
@@ -87,7 +88,7 @@ $hr-height: 1px !default;
     }
 
     td { 
-      word-break: break-word;
+      word-wrap: break-word;
       @if $include-hyphens == true {
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
