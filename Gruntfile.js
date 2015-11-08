@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           'rm -rf build',
           'echo "Deploy Completed"'
         ].join('&&')
-      },      
+      },
     },
     watch: {
       docs: {
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
       sassWatch: {
         files: ['scss/*.scss', 'scss/ink/*.scss', 'scss/ink/components/*.scss'],
         tasks: ['sass:test', 'copy:sassTest2Dist', 'exec:sassTestDiff'],
-      }      
+      }
     },
 
 
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
       sassTest2Dist: {
         src: 'test/results/ink.css',
         dest: 'css/ink.css',
-      }, 
+      },
 
     },
     sass: {
@@ -130,12 +130,30 @@ module.exports = function(grunt) {
         files: {
           'css/ink.css': 'scss/ink.scss'
         },
+        options: {
+          sourcemap: 'none',
+          style: 'compressed'
+        }
       },
       dev: {
         files: {
           'css/ink.css': 'scss/ink.scss'
         },
-      },      
+      },
+      customdist: {
+        files: {
+          'css/ink-custom.css': 'scss/ink-custom.scss'
+        },
+        options: {
+          sourcemap: 'none',
+          style: 'compressed'
+        }
+      },
+      customdev: {
+        files: {
+          'css/ink-custom.css': 'scss/ink-custom.scss'
+        },
+      },
       test: {
         files: {
           'test/results/ink.css': 'scss/ink.scss',
@@ -145,7 +163,7 @@ module.exports = function(grunt) {
         files: {
           'test/results/target.css': 'test/fixtures/ink.css'
         },
-      }, 
+      },
     },
     "regex-replace": {
       sassPrepTestTarget: {
@@ -167,17 +185,17 @@ module.exports = function(grunt) {
     exec: {
       sassTestDiff: {
         command: [
-         'diff -bB --brief test/results/target.css test/results/ink.css',
-          ';',        
+          'diff -bB --brief test/results/target.css test/results/ink.css',
+          ';',
           'diff -bB test/results/target.css test/results/ink.css > test/results/diff.txt',
           ';',
-         'diff -bBs test/results/target.css test/results/ink.css',
+          'diff -bBs test/results/target.css test/results/ink.css',
           '&&',
           'rm test/results/diff.txt',
         ].join(''),
         exitCode: [0],
-      }, 
-    },    
+      },
+    },
   });
 
   require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});

@@ -5,6 +5,10 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "ink/functions";
 
+// The ink/_settings.scss file must be created.
+// It is recommended to duplicate _settings-default.scss to see all the available variables.
+@import "ink/settings";
+
 // Behold, here are all the Ink components.
 @import "ink/components/normalize";
 @import "ink/components/grid";
