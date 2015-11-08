@@ -1,7 +1,7 @@
 {
   "name": "Advanced Sassy Ink",
   "version": "1.0.0",
-  "description": "Responsive emails with great email client compatibility, based on Ink",
+  "description": "Responsive email framework and inliner with great email client compatibility, based on Ink",
   "directories": {
     "doc": "docs"
   },

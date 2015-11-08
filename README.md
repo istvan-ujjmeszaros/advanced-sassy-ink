@@ -1,7 +1,7 @@
 # Advanced Sassy Ink
 
-> A more fine-tuned version of the great [Sassy Ink](https://github.com/faustgertz/sassy-ink) fork from [@faustgertz](https://github.com/faustgertz), based on [Foundation for Emails (formerly Ink)](http://foundation.zurb.com/emails.html).<br>
-> Responsive emails with great email client compatibility.
+> Responsive email framework and style inliner with great email client compatibility, based on Ink<br>
+> A fine-tuned version of the great [Sassy Ink](https://github.com/faustgertz/sassy-ink) fork from [@faustgertz](https://github.com/faustgertz), based on [Foundation for Emails (formerly Ink)](http://foundation.zurb.com/emails.html).
 
 ## Features
 
@@ -81,13 +81,3 @@ AOL Mail (Chrome, Explorer, Firefox), Gmail (Chrome, Explorer, Firefox), Google 
 * [Faust Gertz](https://github.com/faustgertz), who created the Sass version of the Ink framework
 * [ZURB](http://www.zurb.com), who created Foundation for Emails (formerly Ink), probably the best freely available responsive email framework
 * [René Meye](https://github.com/renemeye)'s [pull request #61](https://github.com/zurb/ink/pull/61) for Ink
-
-### Foundation for Emails (formerly Ink)
-
-Foundation for Emails is a responsive email framework, used to make HTML emails look great on any client or device.
-
-- Homepage:      http://foundation.zurb.com/emails.html
-- Documentation: http://zurb.com/ink/docs.php
-- Original Ink:  https://github.com/zurb/ink
-
-Ink was made by [ZURB](http://www.zurb.com), is MIT-licensed, and absolutely free to use.

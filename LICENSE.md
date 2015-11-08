@@ -1,4 +1,4 @@
-Copyright (c) 2014 ZURB, inc.
+Copyright (c) 2014 ZURB, inc., 2015 Faust Gertz, 2015 István Ujj-Mészáros
 
 MIT License
 
