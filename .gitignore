@@ -3,5 +3,5 @@ node_modules/
 build/
 .sass-cache/
 .idea
-css/*.map
 css/ink-custom.css
+css/ink-custom.map

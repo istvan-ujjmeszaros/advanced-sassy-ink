@@ -9,12 +9,6 @@ var gulp        = require('gulp'),
 
 gulp.task('sass', function() {
   return gulp.src('./scss/ink.scss')
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('./css'));
-});
-
-gulp.task('sass-debug', function() {
-  return gulp.src('./scss/ink.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'nested'}))
     .pipe(sourcemaps.write('./'))
@@ -22,12 +16,6 @@ gulp.task('sass-debug', function() {
 });
 
 gulp.task('custom-sass', function() {
-  return gulp.src('./scss/ink-custom.scss')
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('./css'));
-});
-
-gulp.task('custom-sass-debug', function() {
   return gulp.src('./scss/ink-custom.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'nested'}))
