@@ -1,7 +1,6 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 @import "global";
 
 //
@@ -34,7 +33,7 @@ $align-block-grid-to-grid: false !default;
 }
 
 @include exports("block-grid") {
-  @if $include-html-block-grid-classes {  
+  @if $include-html-block-grid-classes {
     /* Block Grid */
 
     .block-grid {

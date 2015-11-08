@@ -1,7 +1,6 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 @import "global";
 
 //
@@ -32,8 +31,8 @@ $sub-column-padding-right: $column-gutter / 2 !default;
       text-align: inherit;
     }
 
-    table.row { 
-      padding: 0px; 
+    table.row {
+      padding: 0px;
       width: 100%;
       position: relative;
     }
@@ -54,7 +53,7 @@ $sub-column-padding-right: $column-gutter / 2 !default;
 
     table.columns td,
     table.column td {
-      padding: 0px 0px $column-cell-padding-bottom;  
+      padding: 0px 0px $column-cell-padding-bottom;
     }
 
     @if $include-html-sub-colums-grid-classes {
@@ -95,7 +94,7 @@ $sub-column-padding-right: $column-gutter / 2 !default;
 
     @for $i from 1 through $total-columns {
       .body .columns td.#{number2word($i)},
-      .body .column td.#{number2word($i)}  {
+      .body .column td.#{number2word($i)} {
         width: grid-calc-pct($i, $total-columns);
       }
     }
@@ -104,7 +103,7 @@ $sub-column-padding-right: $column-gutter / 2 !default;
       td.offset-by-#{number2word($i)} {
         padding-left: grid-calc-px($i, $total-columns, $container-width, $column-gutter) + $column-gutter;
       }
-    }  
+    }
     td.expander {
       visibility: hidden;
       width: 0px;
@@ -129,6 +128,6 @@ $sub-column-padding-right: $column-gutter / 2 !default;
     table.column .right-text-pad,
     table.column .text-pad-right {
       padding-right: $text-padding;
-    }  
-  }  
+    }
+  }
 }

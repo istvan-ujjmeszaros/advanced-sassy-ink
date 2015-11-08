@@ -1,11 +1,9 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 //
 // INK SETTINGS
 //
-
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "functions";
 
@@ -13,8 +11,6 @@
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
-
-
 
 //
 // $GLOBAL
@@ -48,23 +44,17 @@
 
 // $column-gutter: 20px;
 
-
-
 //
 // $NORMALIZE
 //
 
 // $include-html-normalize-classes: $include-html-classes;
 
-
-
 //
 // $ALIGNMENT
 //
 
 // $include-html-alignment-classes: $include-html-classes;
-
-
 
 //
 // $GRID
@@ -83,8 +73,6 @@
 
 // $sub-column-padding-right: $column-gutter / 2;
 
-
-
 //
 // $MEDIA-QUERY-RANGES
 //
@@ -101,15 +89,11 @@
 // $small-up: $screen;
 // $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
 
-
-
 //
 // $OUTLOOK-FIRST
 //
 
 // $include-html-outlook-first-classes: $include-html-classes;
-
-
 
 //
 // $TYPOGRAPHY
@@ -148,8 +132,6 @@
 // $hr-color: #d9d9d9;
 // $hr-height: 1px;
 
-
-
 //
 // $BLOCK-GRID
 //
@@ -160,8 +142,6 @@
 // $block-grid-elements: 8;
 // $block-grid-default-spacing: $column-gutter;
 // $align-block-grid-to-grid: false;
-
-
 
 //
 // $BUTTONS
@@ -194,8 +174,6 @@
 // We use this to set the default radius used throughout the core.
 // $button-radius: $global-radius;
 // $button-round: $global-rounded;
-
-
 
 //
 // $PANELS

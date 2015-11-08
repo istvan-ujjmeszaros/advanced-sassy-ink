@@ -1,7 +1,6 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 @import "global";
 
 //
@@ -155,7 +154,7 @@ $button-round: $global-rounded !default;
     table.large-button:hover td a,
     table.large-button:active td a,
     table.large-button td a:visited {
-      color: color2hex($button-font-color) !important; 
+      color: color2hex($button-font-color) !important;
     }
 
     table.secondary td {

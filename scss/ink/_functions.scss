@@ -2,10 +2,8 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
-
-
 // IMPORT ONCE
-// We use this to prevent styles from being loaded multiple times for compenents that rely on other components. 
+// We use this to prevent styles from being loaded multiple times for compenents that rely on other components.
 $modules: () !default;
 @mixin exports($name) {
   @if not index($modules, $name) {
@@ -14,15 +12,13 @@ $modules: () !default;
   }
 }
 
-
-
 // RANGES
-// We use these functions to define ranges for various things, like media queries. 
-@function lower-bound($range){
+// We use these functions to define ranges for various things, like media queries.
+@function lower-bound($range) {
   @if length($range) <= 0 {
     @return 0;
   }
-  @return nth($range,1);
+  @return nth($range, 1);
 }
 
 @function upper-bound($range) {
@@ -31,8 +27,6 @@ $modules: () !default;
   }
   @return nth($range, 2);
 }
-
-
 
 //
 // Grid Functions
@@ -53,36 +47,31 @@ $modules: () !default;
 @function number2word($number) {
   $words: one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twenty-one twenty-two twenty-three twenty-four twenty-five twenty-six twenty-seven twenty-eight twenty-nine thirty thirty-one thirty-two thirty-three thirty-four thirty-five thirty-six thirty-seven thirty-eight thirty-nine forty forty-one forty-two forty-three forty-four forty-five forty-six forty-seven forty-eight forty-nine fifty fifty-one fifty-two fifty-three fifty-four fifty-five fifty-six fifty-seven fifty-eight fifty-nine fifty-one fifty-two fifty-three fifty-four fifty-five fifty-six fifty-seven fifty-eight fifty-nine sixty sixty-one sixty-two sixty-three sixty-four sixty-five sixty-six sixty-seven sixty-eight sixty-nine seventy seventy-one seventy-two seventy-three seventy-four seventy-five seventy-six seventy-seven seventy-eight seventy-nine eighty eighty-one eighty-two eighty-three eighty-four eighty-five eighty-six eighty-seven eighty-eight eighty-nine ninety ninety-one ninety-two ninety-three ninety-four ninety-five ninety-six ninety-seven ninety-eight ninety-nine one-hundred;
   @if type-of($number) != "number" {
-      @warn "number2word(): `#{$number}` is not a number.";
-      @return null;
-    }
+    @warn "number2word(): `#{$number}` is not a number.";
+    @return null;
+  }
   @if $number < 1 or $number > 100 {
-      @warn "number2word(): `#{$number}` is not between 1 and 100.";
-      @return null;
-    } 
-    @return nth($words, $number);
+    @warn "number2word(): `#{$number}` is not between 1 and 100.";
+    @return null;
+  }
+  @return nth($words, $number);
 }
-
-
 
 //
 // Color Functions
 //
 
-@function color2hex($color) {
-  @if type-of($color) != "color" {
-    @warn "color2hex(): `#{$color}` is not a color.";
+@function number2hex($number) {
+  $hexcodes: '00' '01' '02' '03' '04' '05' '06' '07' '08' '09' '0a' '0b' '0c' '0d' '0e' '0f' '10' '11' '12' '13' '14' '15' '16' '17' '18' '19' '1a' '1b' '1c' '1d' '1e' '1f' '20' '21' '22' '23' '24' '25' '26' '27' '28' '29' '2a' '2b' '2c' '2d' '2e' '2f' '30' '31' '32' '33' '34' '35' '36' '37' '38' '39' '3a' '3b' '3c' '3d' '3e' '3f' '40' '41' '42' '43' '44' '45' '46' '47' '48' '49' '4a' '4b' '4c' '4d' '4e' '4f' '50' '51' '52' '53' '54' '55' '56' '57' '58' '59' '5a' '5b' '5c' '5d' '5e' '5f' '60' '61' '62' '63' '64' '65' '66' '67' '68' '69' '6a' '6b' '6c' '6d' '6e' '6f' '70' '71' '72' '73' '74' '75' '76' '77' '78' '79' '7a' '7b' '7c' '7d' '7e' '7f' '80' '81' '82' '83' '84' '85' '86' '87' '88' '89' '8a' '8b' '8c' '8d' '8e' '8f' '90' '91' '92' '93' '94' '95' '96' '97' '98' '99' '9a' '9b' '9c' '9d' '9e' '9f' 'a0' 'a1' 'a2' 'a3' 'a4' 'a5' 'a6' 'a7' 'a8' 'a9' 'aa' 'ab' 'ac' 'ad' 'ae' 'af' 'b0' 'b1' 'b2' 'b3' 'b4' 'b5' 'b6' 'b7' 'b8' 'b9' 'ba' 'bb' 'bc' 'bd' 'be' 'bf' 'c0' 'c1' 'c2' 'c3' 'c4' 'c5' 'c6' 'c7' 'c8' 'c9' 'ca' 'cb' 'cc' 'cd' 'ce' 'cf' 'd0' 'd1' 'd2' 'd3' 'd4' 'd5' 'd6' 'd7' 'd8' 'd9' 'da' 'db' 'dc' 'dd' 'de' 'df' 'e0' 'e1' 'e2' 'e3' 'e4' 'e5' 'e6' 'e7' 'e8' 'e9' 'ea' 'eb' 'ec' 'ed' 'ee' 'ef' 'f0' 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'fa' 'fb' 'fc' 'fd' 'fe' 'ff';
+  @if type-of($number) != "number" {
+    @warn "number2hex(): `#{$number}` is not a number.";
     @return null;
   }
-  $six-digit-hexcode: get-six-digit-hexcode($color);
-// Not going to worry about three-character shorthand. Even Zurb 
-// says, in [Responsive Email Gotchas to 
-// Avoid](http://zurb.com/university/library/23), "4. Use six-digit
-// hex codes for colors"
-// 
-// $hexcode: optimze-hexcode($six-digit-hexcode);
-// @return $hexcode;
-  @return $six-digit-hexcode;
+  @if $number < 0 or $number > 255 {
+    @warn "number2hex(): `#{$number}` is not between 0 and 255.";
+    @return null;
+  }
+  @return nth($hexcodes, $number + 1);
 }
 
 @function get-six-digit-hexcode($color) {
@@ -96,17 +85,20 @@ $modules: () !default;
   @return unquote($six-digit-hexcode);
 }
 
-@function number2hex($number) {
-  $hexcodes: '00' '01' '02' '03' '04' '05' '06' '07' '08' '09' '0a' '0b' '0c' '0d' '0e' '0f' '10' '11' '12' '13' '14' '15' '16' '17' '18' '19' '1a' '1b' '1c' '1d' '1e' '1f' '20' '21' '22' '23' '24' '25' '26' '27' '28' '29' '2a' '2b' '2c' '2d' '2e' '2f' '30' '31' '32' '33' '34' '35' '36' '37' '38' '39' '3a' '3b' '3c' '3d' '3e' '3f' '40' '41' '42' '43' '44' '45' '46' '47' '48' '49' '4a' '4b' '4c' '4d' '4e' '4f' '50' '51' '52' '53' '54' '55' '56' '57' '58' '59' '5a' '5b' '5c' '5d' '5e' '5f' '60' '61' '62' '63' '64' '65' '66' '67' '68' '69' '6a' '6b' '6c' '6d' '6e' '6f' '70' '71' '72' '73' '74' '75' '76' '77' '78' '79' '7a' '7b' '7c' '7d' '7e' '7f' '80' '81' '82' '83' '84' '85' '86' '87' '88' '89' '8a' '8b' '8c' '8d' '8e' '8f' '90' '91' '92' '93' '94' '95' '96' '97' '98' '99' '9a' '9b' '9c' '9d' '9e' '9f' 'a0' 'a1' 'a2' 'a3' 'a4' 'a5' 'a6' 'a7' 'a8' 'a9' 'aa' 'ab' 'ac' 'ad' 'ae' 'af' 'b0' 'b1' 'b2' 'b3' 'b4' 'b5' 'b6' 'b7' 'b8' 'b9' 'ba' 'bb' 'bc' 'bd' 'be' 'bf' 'c0' 'c1' 'c2' 'c3' 'c4' 'c5' 'c6' 'c7' 'c8' 'c9' 'ca' 'cb' 'cc' 'cd' 'ce' 'cf' 'd0' 'd1' 'd2' 'd3' 'd4' 'd5' 'd6' 'd7' 'd8' 'd9' 'da' 'db' 'dc' 'dd' 'de' 'df' 'e0' 'e1' 'e2' 'e3' 'e4' 'e5' 'e6' 'e7' 'e8' 'e9' 'ea' 'eb' 'ec' 'ed' 'ee' 'ef' 'f0' 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'fa' 'fb' 'fc' 'fd' 'fe' 'ff';
-  @if type-of($number) != "number" {
-    @warn "number2hex(): `#{$number}` is not a number.";
+@function color2hex($color) {
+  @if type-of($color) != "color" {
+    @warn "color2hex(): `#{$color}` is not a color.";
     @return null;
   }
-  @if $number < 0 or $number > 255 {
-    @warn "number2hex(): `#{$number}` is not between 0 and 255.";
-    @return null;
-  }
-  @return nth($hexcodes, $number + 1);
+  $six-digit-hexcode: get-six-digit-hexcode($color);
+  // Not going to worry about three-character shorthand. Even Zurb
+  // says, in [Responsive Email Gotchas to
+  // Avoid](http://zurb.com/university/library/23), "4. Use six-digit
+  // hex codes for colors"
+  //
+  // $hexcode: optimze-hexcode($six-digit-hexcode);
+  // @return $hexcode;
+  @return $six-digit-hexcode;
 }
 
 @function optimze-hexcode($string) {

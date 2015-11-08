@@ -1,7 +1,6 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 @import "global";
 
 //
@@ -77,7 +76,7 @@ $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default
           width: grid-calc-pct($i, $total-columns) !important;
         }
       }
-      table[class="body"] td%offset-by{
+      table[class="body"] td%offset-by {
         padding-left: 0 !important;
       }
       @for $i from 1 through ($total-columns - 1) {
@@ -104,13 +103,13 @@ $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default
       table[class="body"] .show-for-desktop {
         display: none !important;
       }
-      
+
       table[class="body"] .show-for-small,
       table[class="body"] .hide-for-desktop {
-        display : block !important;
-        width : auto !important;
-        overflow : visible !important;
-      }      
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+      }
     }
   }
 }

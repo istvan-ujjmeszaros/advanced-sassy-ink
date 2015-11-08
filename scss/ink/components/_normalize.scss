@@ -1,7 +1,6 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 @import "global";
 
 //
@@ -14,58 +13,54 @@ $include-hyphens: false !default;
 $hr-color: #d9d9d9 !default;
 $hr-height: 1px !default;
 
-
 @include exports("normalize") {
-    @if $include-html-normalize-classes {
+  @if $include-html-normalize-classes {
     /* Client-specific Styles and Reset */
 
-    #outlook a { 
-      padding:0; 
-    } 
-
-    body { 
-      width:100% !important; 
-      min-width: 100%;
-      -webkit-text-size-adjust:100%; 
-      -ms-text-size-adjust:100%; 
-      margin:0; 
-      padding:0;
+    #outlook a {
+      padding: 0;
     }
 
-      /* .ExternalClass applies to Outlook.com (the artist formerly known as Hotmail)  */
-      
-    .ExternalClass { 
-      width:100%;
+    body {
+      width: 100% !important;
+      min-width: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* .ExternalClass applies to Outlook.com (the artist formerly known as Hotmail)  */
+
+    .ExternalClass {
+      width: 100%;
 
       &,
-      p, 
-      span, 
-      font, 
-      td, 
-      div { 
-        line-height: 100%; 
-      }   
-    } 
-
-     
-
-
-    #backgroundTable { 
-      margin:0; 
-      padding:0; 
-      width:100% !important; 
-      line-height: 100% !important; 
+      p,
+      span,
+      font,
+      td,
+      div {
+        line-height: 100%;
+      }
     }
 
-    img { 
-      outline:none; 
-      text-decoration:none; 
+    #backgroundTable {
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      line-height: 100% !important;
+    }
+
+    img {
+      outline: none;
+      text-decoration: none;
       -ms-interpolation-mode: bicubic;
       width: auto;
       height: auto;
-      max-width: 100%; 
-      float: left; 
-      clear: both; 
+      max-width: 100%;
+      float: left;
+      clear: both;
       display: block;
     }
 
@@ -74,7 +69,7 @@ $hr-height: 1px !default;
       min-width: $container-width;
     }
 
-    a img { 
+    a img {
       border: none;
     }
 
@@ -87,19 +82,18 @@ $hr-height: 1px !default;
       border-collapse: collapse;
     }
 
-    td { 
+    td {
       word-wrap: break-word;
       @if $include-hyphens == true {
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
         hyphens: auto;
-      }
-      @else {
+      } @else {
         -webkit-hyphens: none;
         -moz-hyphens: none;
-        hyphens: none;        
+        hyphens: none;
       }
-      border-collapse: collapse !important; 
+      border-collapse: collapse !important;
     }
 
     table, tr, td {
@@ -109,10 +103,10 @@ $hr-height: 1px !default;
     }
 
     hr {
-      color: color2hex($hr-color); 
-      background-color: color2hex($hr-color); 
-      height: $hr-height; 
+      color: color2hex($hr-color);
+      background-color: color2hex($hr-color);
+      height: $hr-height;
       border: none;
     }
   }
-}  
+}

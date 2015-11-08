@@ -1,7 +1,6 @@
 // Ink by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
-
 @import "global";
 
 //
@@ -45,16 +44,16 @@ $header-anchor-font-color-visited: $header-anchor-font-color !default;
 $header-anchor-font-color-active: $header-anchor-font-color !default;
 
 @include exports("type") {
-    @if $include-html-type-classes {
+  @if $include-html-type-classes {
     /* Typography */
 
-    body, table.body, h1, h2, h3, h4, h5, h6, p, td { 
+    body, table.body, h1, h2, h3, h4, h5, h6, p, td {
       color: color2hex($base-font-color);
-      font-family: $base-font-family; 
-      font-weight: $base-font-weight; 
-      padding:0; 
+      font-family: $base-font-family;
+      font-weight: $base-font-weight;
+      padding: 0;
       margin: 0;
-      text-align: left; 
+      text-align: left;
       line-height: $base-line-height;
     }
 
@@ -62,20 +61,35 @@ $header-anchor-font-color-active: $header-anchor-font-color !default;
       word-break: normal;
     }
 
-  h1 {font-size: $h1-font-size;}
-  h2 {font-size: $h2-font-size;}
-  h3 {font-size: $h3-font-size;}
-  h4 {font-size: $h4-font-size;}
-  h5 {font-size: $h5-font-size;}
-  h6 {font-size: $h6-font-size;}
-  body, table.body, p, td {font-size: $body-font-size;line-height:$body-line-height;}
+    h1 {
+      font-size: $h1-font-size;
+    }
+    h2 {
+      font-size: $h2-font-size;
+    }
+    h3 {
+      font-size: $h3-font-size;
+    }
+    h4 {
+      font-size: $h4-font-size;
+    }
+    h5 {
+      font-size: $h5-font-size;
+    }
+    h6 {
+      font-size: $h6-font-size;
+    }
+    body, table.body, p, td {
+      font-size: $body-font-size;
+      line-height: $body-line-height;
+    }
 
     p.lead, p.lede, p.leed {
       font-size: $paragraph-lead-font-size;
-      line-height:$paragraph-lead-line-height;
+      line-height: $paragraph-lead-line-height;
     }
 
-    p { 
+    p {
       margin-bottom: $paragraph-margin-bottom;
     }
 
@@ -84,47 +98,47 @@ $header-anchor-font-color-active: $header-anchor-font-color !default;
     }
 
     a {
-      color: color2hex($anchor-font-color); 
+      color: color2hex($anchor-font-color);
       text-decoration: $anchor-text-decoration;
     }
 
-    a:hover { 
+    a:hover {
       color: color2hex($anchor-font-color-hover) !important;
     }
 
-    a:active { 
+    a:active {
       color: color2hex($anchor-font-color-active) !important;
     }
 
-    a:visited { 
+    a:visited {
       color: color2hex($anchor-font-color-visited) !important;
     }
 
-    h1 a, 
-    h2 a, 
-    h3 a, 
-    h4 a, 
-    h5 a, 
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
     h6 a {
       color: color2hex($header-anchor-font-color);
     }
 
-    h1 a:active, 
-    h2 a:active,  
-    h3 a:active, 
-    h4 a:active, 
-    h5 a:active, 
-    h6 a:active { 
-      color: color2hex($header-anchor-font-color-active) !important; 
-    } 
+    h1 a:active,
+    h2 a:active,
+    h3 a:active,
+    h4 a:active,
+    h5 a:active,
+    h6 a:active {
+      color: color2hex($header-anchor-font-color-active) !important;
+    }
 
-    h1 a:visited, 
-    h2 a:visited,  
-    h3 a:visited, 
-    h4 a:visited, 
-    h5 a:visited, 
-    h6 a:visited { 
-      color: color2hex($header-anchor-font-color-visited) !important; 
-    } 
+    h1 a:visited,
+    h2 a:visited,
+    h3 a:visited,
+    h4 a:visited,
+    h5 a:visited,
+    h6 a:visited {
+      color: color2hex($header-anchor-font-color-visited) !important;
+    }
   }
-}   
+}
