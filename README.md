@@ -1,95 +1,79 @@
-# Sassy Ink
+# Advanced Sassy Ink
 
-> The *unofficial* Sass port of [Ink](http://zurb.com/ink), Zurb's responsive email framework. If you are going to build a responsive HTML email, treat yourself to the most customizable version of the leading framework, Sassy Ink.
+> A more fine-tuned version of the great [Sassy Ink](https://github.com/faustgertz/sassy-ink) fork from [@faustgertz](https://github.com/faustgertz), based on [Foundation for Emails (formerly Ink)](http://foundation.zurb.com/emails.html).<br>
+> Responsive emails with great email client compatibility.
 
-Please let me know if you use Sassy Ink.
+## Features
 
-## Why use Sassy Ink?
+The project has a `gulpfile.js`, which contains tasks for compiling the css file from sass, and for moving the css styles inline in the provided html email templates.
 
-1. Zurb's Ink is the leading responsive email framework. Sassy Ink provides 80 or so customizable variables. You can have it your way. 
-1. It makes clients happy. Clients never want framework defaults. Sassy Ink makes it easy to customize container width, number of columns, gutter width, break point, colors, font sizes, font-families, margins, padding, etc... 
-1. Pretty closely follows [Foundation](http://foundation.zurb.com/)'s Sass structure and naming conventions. If you are familiar with Foundation (or even Bootstrap), you are familiar with Sassy Ink.
-1. You can easily verify that you are getting all the benefits of Ink because the generated CSS is as close to Zurb's original `ink.css` as possible. If you don't touch the default variables, the differences are trivial.
+The compiled html files are optimized to work in every email client, for example it capitalizes the `Margin` and `Float` styles so [they will work on outlook.com](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins).
 
-It is a great start for a simple Sass port. 
+## HTML email best practices
 
-## Contributing
+To achieve the best possible email client support, you need to know about some surprising pitfalls in some email clients out there. There is a great [CSS Support Guide on Campaignmonitor's website](https://www.campaignmonitor.com/css/).
+I stress out that `padding` is not supported on `<p>`, `<div>` and `<a>` tags, and `width` is not supported on `<p>` and `<div>` elements.
 
-There is much left to do, so please feel free to pitch in.
+If you avoid those pitfalls, then you can achieve pretty great compatibility.
 
+## Changes compared to the original version
 
-## _settings.scss
+The original documentation at http://zurb.com/ink/docs.php is applicable in most parts.
 
-You will want to make changes to the settings file which includes 80 or so variables that can be customized for each component. Making changes is simple, in `_settings.scss` find the element you want to style. Find the variable, uncomment the style, and change its value. Be sure to compile Sass stylesheets to CSS in order see any changes.
+### Prefer block-grid instead of grid
 
-## Runtime Dependencies
+The main difference is that the grid columns are reduced to only two by default, as they doesn't play well with Gmail, which doesn't support media queries so shows all the columns in one row even on very small grids.
 
-Per the `Gemfile`:
+That's why it is reduced to only two columns, so it is only good for having support to use a left aligned section and a right aligned section in the same row.
 
-	**sass** <= 3.3.13 & >= 3.2.5
+In every other use cases it is recommended to use the block-column syntax instead, which is responsive even on gmail.
 
-As of this writing, Sassy Ink is still compatible with [Compass](http://compass-style.org/) versions 0.12.2 through 1.0.1 (as long Sass is between version 3.2.5 and 3.3.13), [Koala](http://koala-app.com/) 2.0.3, and [CodeKit](https://incident57.com/codekit/) 2.1.3. It also appears to be compatible with [Scout](http://mhs.github.io/scout-app/) 0.7.1, even though Scout looks like it's using Sass 3.2.1. I haven't tested any others. Please let me know if you do.
+### Removed the buttons
 
-It is **not** *necessarily* compatible with Sass >= 3.4 because assigning to global variables by default is deprecated. Using `!global` to fix this is incompatible with Sass < 3.3 and would break current versions of Koala and Scout; most versions of Compass less than 1.0.1 (August 18, 2014); and probably several other Sass compilers. Fortunately, the incompatibility is limited to the `export` mixin, which is used to prevent styles from being loaded multiple times for components that rely on other components. So, unless you are doing customization beyond setting variables in `_settings.scss`, this is not likely to be a problem. Yet, it seems worth mentioning.
+Ink's button styles are not user friendly as they look as a button, but only the text is clickable, not the whole "button"", which can confuse the readers.
 
-## Precision
+The recommended way is to use Campaignmonitor's [Bulletproof email buttons](http://buttons.cm/) generator, which generates two different button versions, which wors great in every email client.
 
-In order to have the same number of significant digits as in the original Zurb `ink.css`, you must set the precision to 6. For example:
+## Customizing the sass build
 
-	sass --precision 6 scss/ink.scss css/ink.css
+> You can compile the default ink.scss file without doing any modifications.
 
-In the Compass `config.rb`:
-	
-	Sass::Script::Number.precision = 6
+If you want to customize the sass files, then you need to create a new `_settings.scss` file inside the `scss/ink/` folder, based on `_settings-default.scss`, which is there only for reference. That file contains all the variables that can be customized, just find those you need, uncomment them and change their value.
 
-In `Gruntfile.js`:
+## Compatibility
 
-	grunt.initConfig({
-	  sass: {
-	    dist: {
-	      options: {
-	        precision: 6
-	      },
-	      files: {
-	        'css/ink.css': 'scss/ink.scss'
-	      }
-	    }
-	  }
-	});
-	grunt.loadNpmTasks('grunt-contrib-sass');
+The compiled html template will have the best possible email client compatibility, tested with Litmus on a layout that utilizes the two column grid and three columns of the block-grid.
 
-## Testing
+### Tested with Litmus on the foloowing clients
 
-The only testing I am doing so far is comparing the Saas generated `ink.css` with a slightly massaged Zurb's [`ink.css` version 1.0.5.](https://github.com/zurb/ink/blob/416e0666bfe54a5c9f5dbeaa4c26d29b95b80c0c/css/ink.css) Please note Zurb's [`ink.css` on GitHub](https://github.com/zurb/ink/blob/master/css/ink.css) does not necessarly match the [version distributed on their website](http://zurb.com/ink/).
+#### Mobile browsers
 
-### Massaging
+Android 4.4, Gmail App on Android, iPad Retina, iPad Mini, iPhone 5s iOS 7, iPhone 5S iOS 8, iPhone 6, iPhone 6 Plus, iPhone 6S. iPhone 6S Plus
 
-1. Run the CSS file through a Sass compiler to clean up some white space issues (`sass --precision 6  --style expanded test/fixtures/ink.css test/results/target.css`)
-1. Remove an annoying line-break difference (`s/(table\[class="body"\] td\.offset\-by\-)(\w+)\s*?(,?\s*)(?=\1\w+)/$1$2, /g`)
-1. Rename filename for the sourceMappingURL, should one exist, from 'target' to 'ink'. 
+#### Desktop browsers - Mac
 
-### Diff
+Apple Mail 7, Apple Mail 8, Outlook 2011, Outlook 2016
 
-`diff -bBs test/results/target.css test/results/ink.css`
+#### Desktop browsers - Windows
 
-	Files test/results/target.css and test/results/ink.css are identical
+Lotus Notes 8.5, Outlook 2000, Outlook 2002, Outlook 2003, Outlook 2007, Outlook 2010, Outlook 2013, Outlook 2013 120 DPI, Plain Text, Thunderbird 38
 
-## To Do
+#### Web mail
 
-* I haven't yet figured out what to do with the docs, `CONTRIBUTING.md`, `Gruntfile.js`, `bower.json`, etc... 
+AOL Mail (Chrome, Explorer, Firefox), Gmail (Chrome, Explorer, Firefox), Google Apps (Chrome, Explorer, Firefox), Office 365 (Chrome), Outlook.com (Chrome, Explorer, Firefox), Yahoo! Mail (Explorer, Firefox)
 
 ## Credit
 
-* [ZURB](http://www.zurb.com) (obvious)
-* [René Meye](https://github.com/renemeye)'s [pull request #61](https://github.com/zurb/ink/pull/61). (less obvious)
+* [Faust Gertz](https://github.com/faustgertz), who created the Sass version of the Ink framework
+* [ZURB](http://www.zurb.com), who created Foundation for Emails (formerly Ink), probably the best freely available responsive email framework
+* [René Meye](https://github.com/renemeye)'s [pull request #61](https://github.com/zurb/ink/pull/61) for Ink
 
-### Ink
+### Foundation for Emails (formerly Ink)
 
+Foundation for Emails is a responsive email framework, used to make HTML emails look great on any client or device.
 
-Ink is a responsive email framework, used to make HTML emails look great on any client or device.  It includes a 12-column grid, as well as some simple UI elements for rapid prototyping.
-
-Homepage:      http://zurb.com/ink<br />
-Documentation: http://zurb.com/ink/docs.php<br />
-Download:      http://zurb.com/ink/download.php
+Homepage:      http://foundation.zurb.com/emails.html
+Documentation: http://zurb.com/ink/docs.php
+Download:      https://github.com/zurb/ink/archive/master.zip
 
 Ink was made by [ZURB](http://www.zurb.com), is MIT-licensed, and absolutely free to use.
