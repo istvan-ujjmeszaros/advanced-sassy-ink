@@ -1,35 +1,36 @@
 {
-  "name": "Advanced Sassy Ink",
+  "name": "advanced-sassy-ink",
   "version": "1.0.0",
   "description": "Responsive email framework and inliner with great email client compatibility, based on Ink",
   "directories": {
     "doc": "docs"
   },
   "dependencies": {
-    "gulp": "^3.0.9"
-  },
-  "devDependencies": {
-    "run-sequence": "^1.1.4",
-    "gulp-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-inline-css": "^3.0.0",
     "gulp-juice-concat": "^1.1.2",
-    "gulp-replace": "^0.5.4"
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.1.0",
+    "run-sequence": "^1.1.4",
+    "gulp-inline-css": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-sourcemaps": "^1.6.0"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/istvan-ujjmeszaros/advanced-sassy-ink"
+    "url": "git+https://github.com/istvan-ujjmeszaros/advanced-sassy-ink.git"
   },
   "keywords": [
     "ink",
     "responsive",
     "email",
     "css",
-    "framework"
+    "inliner",
+    "styles"
   ],
   "author": "István Ujj-Mészáros",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/istvan-ujjmeszaros/advanced-sassy-ink/issues"
-  }
+  },
+  "homepage": "https://github.com/istvan-ujjmeszaros/advanced-sassy-ink#readme"
 }
