@@ -25,7 +25,9 @@
     "juice": "^1.7.1",
 
     "gulp": "^3.0.9",
-    "gulp-sass": "^2.1.0"
+    "gulp-sass": "^2.1.0",
+    "gulp-inline-css": "^3.0.0",
+    "gulp-juice-concat": "^1.1.2"
   },
   "repository": {
     "type": "git",
