@@ -72,8 +72,8 @@ AOL Mail (Chrome, Explorer, Firefox), Gmail (Chrome, Explorer, Firefox), Google 
 
 Foundation for Emails is a responsive email framework, used to make HTML emails look great on any client or device.
 
-Homepage:      http://foundation.zurb.com/emails.html
-Documentation: http://zurb.com/ink/docs.php
-Download:      https://github.com/zurb/ink/archive/master.zip
+- Homepage:      http://foundation.zurb.com/emails.html
+- Documentation: http://zurb.com/ink/docs.php
+- Download:      https://github.com/zurb/ink/archive/master.zip
 
 Ink was made by [ZURB](http://www.zurb.com), is MIT-licensed, and absolutely free to use.
