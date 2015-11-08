@@ -16,14 +16,20 @@ $include-html-alignment-classes: $include-html-classes !default;
       text-align: center;
     }
 
-    h1.center,
-    h2.center,
-    h3.center,
-    h4.center,
-    h5.center,
-    h6.center,
-    p.center {
-      text-align: center;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      &.center {
+        text-align: center;
+      }
+
+      .center & {
+        text-align: center;
+      }
     }
 
     span.center {
@@ -37,7 +43,16 @@ $include-html-alignment-classes: $include-html-classes !default;
     }
 
     .text-right {
-      text-align: right;
+      &,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        text-align: right;
+      }
     }
 
     img.center {

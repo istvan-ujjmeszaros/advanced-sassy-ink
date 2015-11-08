@@ -165,6 +165,43 @@ module.exports = function(grunt) {
         },
       },
     },
+    inlinecss: {
+      main: {
+        options: {
+          preserveMediaQueries: true,
+          preserveImportant: true,
+        },
+        files: {
+          'template-dist/your-email-template-compiled.html': 'template-src/your-email-template-src.html',
+        }
+      }
+    },
+    replace: {
+      outlook: {
+        src: ['template-dist/*.html'],
+        overwrite: true,
+        replacements: [
+          {
+            from: 'margin:',
+            to: function (matchedWord) {   // callback replacement
+              return matchedWord.charAt(0).toUpperCase() + matchedWord.slice(1);
+            }
+          },
+          {
+            from: 'margin-',
+            to: function (matchedWord) {   // callback replacement
+              return matchedWord.charAt(0).toUpperCase() + matchedWord.slice(1);
+            }
+          },
+          {
+            from: 'float:',
+            to: function (matchedWord) {   // callback replacement
+              return matchedWord.charAt(0).toUpperCase() + matchedWord.slice(1);
+            }
+          },
+        ]
+      }
+    },
     "regex-replace": {
       sassPrepTestTarget: {
         src: ['test/results/target.css'],
@@ -222,6 +259,6 @@ module.exports = function(grunt) {
   grunt.registerTask('sassy:deploy:docs', ['sass:dist', 'deploy:docs']);
   grunt.registerTask('sassy:default', ['sass:dist', 'default']);
 
-
+  grunt.registerTask('emailtemplate', ['sass:dist', 'inlinecss:main', 'replace:outlook']);
 
 };
