@@ -1,6 +1,6 @@
 {
   "name": "advanced-sassy-ink",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Responsive email framework and inliner with great email client compatibility, based on Ink",
   "directories": {
     "doc": "docs"
