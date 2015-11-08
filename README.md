@@ -34,6 +34,14 @@ Ink's button styles are not user friendly as they look as a button, but only the
 
 The recommended way is to use Campaign Monitor's [Bulletproof email buttons](http://buttons.cm/) generator, which generates two different button versions, which works great in every email client.
 
+### Added alignment helper classes
+
+Added the following new helpwer classes:
+
+- `text-left`: left aligning the text
+- `text-right`: right aligning the text
+- `centered`: that one is not for text, it is centering the block level elements (for text, you can use Ink's built-in `center` class)
+
 ## Customizing the sass build
 
 > You can compile the default ink.scss file without doing any modifications.
@@ -53,6 +61,12 @@ If you are not familiar with Gulp, no fear, it is fairly easy to setup.
 1. You need to install node.js, which you can obtain at [https://nodejs.org](https://nodejs.org).<br>
 2. Then run `npm install` from the command line in the project's root folder, which will install all the required node modules.<br>
 3. After that, you can compile both the sass files and the html templates by running `gulp` from the command line in the project root.
+
+### Available gulp tasks
+
+- `gulp sass`: compiles the default ink styles to `/css/ink.css`
+- `gulp custom-sass`: compiles the customized ink styles to `/css/ink-custom.css`, based on the customized `_settings.scss` file, which must be created based on the provided `_settings-default.scss` file
+- `gulp inline-styles`: moving the style decalrations to inline styles in all the `.html` files in the `templates-src` folder, written into the `templates-dist` folder
 
 ## Compatibility
 
