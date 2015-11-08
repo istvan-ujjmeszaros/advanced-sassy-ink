@@ -27,7 +27,8 @@
     "gulp": "^3.0.9",
     "gulp-sass": "^2.1.0",
     "gulp-inline-css": "^3.0.0",
-    "gulp-juice-concat": "^1.1.2"
+    "gulp-juice-concat": "^1.1.2",
+    "gulp-replace": "^0.5.4"
   },
   "repository": {
     "type": "git",
