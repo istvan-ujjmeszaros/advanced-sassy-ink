@@ -1,14 +1,11 @@
 'use strict';
 
-var gulp    = require('gulp'),
-    sass    = require('gulp-sass'),
-    juice   = require('gulp-juice-concat'),
-    replace = require('gulp-replace');
-
-var config = {
-  sourceDir: '/templates-src',
-  destDir: '/templates-dist'
-};
+var gulp        = require('gulp'),
+    runSequence = require('run-sequence'),
+    sass        = require('gulp-sass'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    juice       = require('gulp-juice-concat'),
+    replace     = require('gulp-replace');
 
 gulp.task('sass', function() {
   return gulp.src('./scss/ink.scss')
@@ -16,8 +13,30 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./css'));
 });
 
-gulp.task('inlinestyles', function() {
-  gulp.src(['./template-src/**/*.html'])
+gulp.task('sass-debug', function() {
+  return gulp.src('./scss/ink.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'nested'}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('custom-sass', function() {
+  return gulp.src('./scss/ink-custom.scss')
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('custom-sass-debug', function() {
+  return gulp.src('./scss/ink-custom.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'nested'}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./css'));
+});
+
+gulp.task('inline-styles', function() {
+  gulp.src(['./templates-src/**/*.html'])
     .pipe(juice({
       preserveMediaQueries: true,
       preserveFontFaces: true,
@@ -31,5 +50,9 @@ gulp.task('inlinestyles', function() {
     .pipe(replace('margin-bottom:', 'Margin-bottom:'))
     .pipe(replace('margin-right:', 'Margin-right:'))
     .pipe(replace('float:', 'Float:'))
-    .pipe(gulp.dest('./template-dist'));
+    .pipe(gulp.dest('./templates-dist'));
+});
+
+gulp.task('compile-all', function(cb) {
+  runSequence('sass', 'inline-styles', cb);
 });
