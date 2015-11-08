@@ -1,11 +1,11 @@
 # Advanced Sassy Ink
 
-> Responsive email framework and style inliner with great email client compatibility, based on Ink<br>
+> Responsive email framework and style inliner with great email client compatibility, based on Ink.<br>
 > A fine-tuned version of the great [Sassy Ink](https://github.com/faustgertz/sassy-ink) fork from [@faustgertz](https://github.com/faustgertz), based on [Foundation for Emails (formerly Ink)](http://foundation.zurb.com/emails.html).
 
 ## Features
 
-The project has a `gulpfile.js`, which contains tasks for compiling the css file from sass, and for moving the css styles inline in the provided html email templates.
+The project has a `gulpfile.js`, which contains tasks for compiling the css file from an advanced [Sassy Ink](https://github.com/faustgertz/sassy-ink) version, and for moving the css styles inline in the provided html email templates.
 
 The compiled html files are optimized to work in every email client, for example it capitalizes the `Margin` and `Float` styles so [they will work on outlook.com](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins).
 
@@ -26,7 +26,7 @@ The main difference is that the grid columns are reduced to only two by default,
 
 That's why it is reduced to only two columns, so it is only good for having support to use a left aligned section and a right aligned section in the same row.
 
-In every other use cases it is recommended to use the block-column syntax instead, which is responsive even on Gmail.
+In every other use cases it is recommended to use the block-grid syntax instead, which is responsive even on Gmail.
 
 ### Removed the buttons
 
@@ -36,7 +36,7 @@ The recommended way is to use Campaign Monitor's [Bulletproof email buttons](htt
 
 ### Added alignment helper classes
 
-Added the following new helpwer classes:
+Added the following new helper classes:
 
 - `text-left`: left aligning the text
 - `text-right`: right aligning the text
@@ -56,7 +56,7 @@ This project contains a gulp file with tasks to do that automatically.
 
 ### How gulp works
 
-If you are not familiar with Gulp, no fear, it is fairly easy to setup.
+If you are not familiar with Gulp, give it a try, it is fairly easy to setup and can greatly boost your productivity.
 
 1. You need to install node.js, which you can obtain at [https://nodejs.org](https://nodejs.org).<br>
 2. Then run `npm install` from the command line in the project's root folder, which will install all the required node modules.<br>
@@ -66,7 +66,7 @@ If you are not familiar with Gulp, no fear, it is fairly easy to setup.
 
 - `gulp sass`: compiles the default ink styles to `/css/ink.css`
 - `gulp custom-sass`: compiles the customized ink styles to `/css/ink-custom.css`, based on the customized `_settings.scss` file, which must be created based on the provided `_settings-default.scss` file
-- `gulp inline-styles`: moving the style decalrations to inline styles in all the `.html` files in the `templates-src` folder, written into the `templates-dist` folder
+- `gulp inline-styles`: moving the style declarations to inline styles in all the `.html` files in the `templates-src` folder, written into the `templates-dist` folder
 
 ## Compatibility
 
