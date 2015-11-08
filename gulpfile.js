@@ -41,6 +41,6 @@ gulp.task('inline-styles', function() {
     .pipe(gulp.dest('./templates-dist'));
 });
 
-gulp.task('compile-all', function(cb) {
+gulp.task('default', function(cb) {
   runSequence('sass', 'inline-styles', cb);
 });

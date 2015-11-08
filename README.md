@@ -40,6 +40,20 @@ The recommended way is to use Campaignmonitor's [Bulletproof email buttons](http
 
 If you want to customize the sass files, then you need to create a new `_settings.scss` file inside the `scss/ink/` folder, based on `_settings-default.scss`, which is there only for reference. That file contains all the variables that can be customized, just find those you need, uncomment them and change their value.
 
+## Compiling the production ready HTML email
+
+For the best possible compatibility, HTML emails need to utilize inline styles instead of the style header.
+
+This project contains a gulp file with tasks to do that automatically.
+
+### How gulp works
+
+If you are not familiar with Gulp, no fear, it is fairly easy to setup.
+
+You need to install node.js, which you can obtain at [https://nodejs.org/en/](https://nodejs.org/en/).<br>
+Then run `npm install` from the command line in the project's root folder, which will install all the required node modules.<br>
+After that, you can compile both the sass files and the html templates by running `gulp` from the command line in the project root.
+
 ## Compatibility
 
 The compiled html template will have the best possible email client compatibility, tested with Litmus on a layout that utilizes the two column grid and three columns of the block-grid.
