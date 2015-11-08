@@ -11,7 +11,7 @@ The compiled html files are optimized to work in every email client, for example
 
 ## HTML email best practices
 
-To achieve the best possible email client support, you need to know about some surprising pitfalls in some email clients out there. There is a great [CSS Support Guide on Campaignmonitor's website](https://www.campaignmonitor.com/css/).
+To achieve the best possible email client support, you need to know about some surprising pitfalls in some email clients out there. There is a great [CSS Support Guide on Campaign Monitor's website](https://www.campaignmonitor.com/css/).
 I stress out that `padding` is not supported on `<p>`, `<div>` and `<a>` tags, and `width` is not supported on `<p>` and `<div>` elements.
 
 If you avoid those pitfalls, then you can achieve pretty great compatibility.
@@ -22,17 +22,17 @@ The original documentation at http://zurb.com/ink/docs.php is applicable in most
 
 ### Prefer block-grid instead of grid
 
-The main difference is that the grid columns are reduced to only two by default, as they doesn't play well with Gmail, which doesn't support media queries so shows all the columns in one row even on very small grids.
+The main difference is that the grid columns are reduced to only two by default, as they does not play well with Gmail which has no support for media queries, so shows all the columns in one row even on very small screens.
 
 That's why it is reduced to only two columns, so it is only good for having support to use a left aligned section and a right aligned section in the same row.
 
-In every other use cases it is recommended to use the block-column syntax instead, which is responsive even on gmail.
+In every other use cases it is recommended to use the block-column syntax instead, which is responsive even on Gmail.
 
 ### Removed the buttons
 
 Ink's button styles are not user friendly as they look as a button, but only the text is clickable, not the whole "button"", which can confuse the readers.
 
-The recommended way is to use Campaignmonitor's [Bulletproof email buttons](http://buttons.cm/) generator, which generates two different button versions, which wors great in every email client.
+The recommended way is to use Campaign Monitor's [Bulletproof email buttons](http://buttons.cm/) generator, which generates two different button versions, which works great in every email client.
 
 ## Customizing the sass build
 
@@ -58,7 +58,7 @@ After that, you can compile both the sass files and the html templates by runnin
 
 The compiled html template will have the best possible email client compatibility, tested with Litmus on a layout that utilizes the two column grid and three columns of the block-grid.
 
-### Tested with Litmus on the foloowing clients
+### Tested with Litmus on the following clients
 
 #### Mobile browsers
 
