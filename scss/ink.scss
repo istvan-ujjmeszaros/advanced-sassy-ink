@@ -5,8 +5,10 @@
 // Make sure the charset is set appropriately
 @charset "UTF-8";
 
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import "ink/functions";
+
 // Behold, here are all the Ink components.
-@import "ink/settings";
 @import "ink/components/normalize";
 @import "ink/components/grid";
 @import "ink/components/block-grid";
