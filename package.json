@@ -22,7 +22,10 @@
     "load-grunt-tasks": "^3.3.0",
     "grunt-inline-css": "^0.1.5",
     "grunt-text-replace": "^0.4.0",
-    "juice": "^1.7.1"
+    "juice": "^1.7.1",
+
+    "gulp": "^3.0.9",
+    "gulp-sass": "^2.1.0"
   },
   "repository": {
     "type": "git",
