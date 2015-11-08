@@ -18,11 +18,11 @@ If you avoid those pitfalls, then you can achieve pretty great compatibility.
 
 ## Changes compared to the original version
 
-The original documentation at http://zurb.com/ink/docs.php is applicable in most parts.
+The original documentation at [http://zurb.com/ink/docs.php](http://zurb.com/ink/docs.php) is applicable in most parts.
 
 ### Prefer block-grid instead of grid
 
-The main difference is that the grid columns are reduced to only two by default, as they does not play well with Gmail which has no support for media queries, so shows all the columns in one row even on very small screens.
+The main difference is that the grid columns are reduced to only two by default, as they does not play well with Gmail which has no support for media queries, so it shows all the columns in one row even on very small screens.
 
 That's why it is reduced to only two columns, so it is only good for having support to use a left aligned section and a right aligned section in the same row.
 
@@ -30,7 +30,7 @@ In every other use cases it is recommended to use the block-column syntax instea
 
 ### Removed the buttons
 
-Ink's button styles are not user friendly as they look as a button, but only the text is clickable, not the whole "button"", which can confuse the readers.
+Ink's button styles are not user friendly as they look as a button, but only the text is clickable, not the whole "button", which can confuse the readers.
 
 The recommended way is to use Campaign Monitor's [Bulletproof email buttons](http://buttons.cm/) generator, which generates two different button versions, which works great in every email client.
 
@@ -50,31 +50,57 @@ This project contains a gulp file with tasks to do that automatically.
 
 If you are not familiar with Gulp, no fear, it is fairly easy to setup.
 
-You need to install node.js, which you can obtain at [https://nodejs.org/en/](https://nodejs.org/en/).<br>
-Then run `npm install` from the command line in the project's root folder, which will install all the required node modules.<br>
-After that, you can compile both the sass files and the html templates by running `gulp` from the command line in the project root.
+1. You need to install node.js, which you can obtain at [https://nodejs.org](https://nodejs.org).<br>
+2. Then run `npm install` from the command line in the project's root folder, which will install all the required node modules.<br>
+3. After that, you can compile both the sass files and the html templates by running `gulp` from the command line in the project root.
 
 ## Compatibility
 
-The compiled html template will have the best possible email client compatibility, tested with Litmus on a layout that utilizes the two column grid and three columns of the block-grid.
+The compiled html template will have the best possible email client compatibility, tested with [Litmus](https://litmus.com/) on a layout that utilizes the two column grid and three columns of the block-grid.
 
 ### Tested with Litmus on the following clients
 
 #### Mobile browsers
 
-Android 4.4, Gmail App on Android, iPad Retina, iPad Mini, iPhone 5s iOS 7, iPhone 5S iOS 8, iPhone 6, iPhone 6 Plus, iPhone 6S. iPhone 6S Plus
+- Android 4.4
+- Gmail App on Android
+- iPad Retina
+- iPad Mini
+- iPhone 5s iOS 7
+- iPhone 5s iOS 8
+- iPhone 6
+- iPhone 6 Plus
+- iPhone 6s
+- iPhone 6s Plus
 
 #### Desktop browsers - Mac
 
-Apple Mail 7, Apple Mail 8, Outlook 2011, Outlook 2016
+- Apple Mail 7
+- Apple Mail 8
+- Outlook 2011
+- Outlook 2016
 
 #### Desktop browsers - Windows
 
-Lotus Notes 8.5, Outlook 2000, Outlook 2002, Outlook 2003, Outlook 2007, Outlook 2010, Outlook 2013, Outlook 2013 120 DPI, Plain Text, Thunderbird 38
+- Lotus Notes 8.5
+- Outlook 2000
+- Outlook 2002
+- Outlook 2003
+- Outlook 2007
+- Outlook 2010
+- Outlook 2013
+- Outlook 2013 120 DPI
+- Plain Text
+- Thunderbird 38
 
 #### Web mail
 
-AOL Mail (Chrome, Explorer, Firefox), Gmail (Chrome, Explorer, Firefox), Google Apps (Chrome, Explorer, Firefox), Office 365 (Chrome), Outlook.com (Chrome, Explorer, Firefox), Yahoo! Mail (Explorer, Firefox)
+- AOL Mail (Chrome, Explorer, Firefox)
+- Gmail (Chrome, Explorer, Firefox)
+- Google Apps (Chrome, Explorer, Firefox)
+- Office 365 (Chrome)
+- Outlook.com (Chrome, Explorer, Firefox)
+- Yahoo! Mail (Explorer, Firefox)
 
 ## Credit
 
