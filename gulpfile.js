@@ -7,7 +7,7 @@ var gulp        = require('gulp'),
     juice       = require('gulp-juice-concat'),
     replace     = require('gulp-replace');
 
-gulp.task('sass', function() {
+gulp.task('compile-ink', function() {
   return gulp.src('./scss/ink.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'nested'}))
@@ -15,7 +15,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./css'));
 });
 
-gulp.task('custom-sass', function() {
+gulp.task('compile-custom-ink', function() {
   return gulp.src('./scss/ink-custom.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'nested'}))
@@ -42,5 +42,5 @@ gulp.task('inline-styles', function() {
 });
 
 gulp.task('default', function(cb) {
-  runSequence('sass', 'inline-styles', cb);
+  runSequence('compile-ink', 'inline-styles', cb);
 });

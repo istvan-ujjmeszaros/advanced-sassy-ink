@@ -1,7 +1,7 @@
 {
-  "name": "advanced-sassy-ink",
-  "version": "1.0.4",
-  "description": "Responsive email framework and inliner with great email client compatibility, based on Ink",
+  "name": "html-email-toolset",
+  "version": "1.1.0",
+  "description": "Responsive html email toolset with great email client compatibility",
   "directories": {
     "doc": "docs"
   },
@@ -17,12 +17,14 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/istvan-ujjmeszaros/advanced-sassy-ink.git"
+    "url": "git+https://github.com/istvan-ujjmeszaros/html-email-toolset.git"
   },
   "keywords": [
-    "ink",
     "responsive",
+    "html",
     "email",
+    "toolset",
+    "ink",
     "css",
     "inliner",
     "styles"
@@ -30,7 +32,7 @@
   "author": "István Ujj-Mészáros",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/istvan-ujjmeszaros/advanced-sassy-ink/issues"
+    "url": "https://github.com/istvan-ujjmeszaros/html-email-toolset/issues"
   },
-  "homepage": "https://github.com/istvan-ujjmeszaros/advanced-sassy-ink#readme"
+  "homepage": "https://github.com/istvan-ujjmeszaros/html-email-toolset#readme"
 }

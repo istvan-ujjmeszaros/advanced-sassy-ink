@@ -1,11 +1,12 @@
-# Advanced Sassy Ink
+# Responsive HTML Email Toolset
 
-> Responsive email framework and style inliner with great email client compatibility, based on Ink.<br>
-> A fine-tuned version of the great [Sassy Ink](https://github.com/faustgertz/sassy-ink) fork from [@faustgertz](https://github.com/faustgertz), based on [Foundation for Emails (formerly Ink)](http://foundation.zurb.com/emails.html).
+> Sass based responsive email framework and CSS style inliner with great email client compatibility<br>
+> A toolset for frontend developers, which provides a framework independent css style inliner, and a fine-tuned version of the great [Sassy Ink](https://github.com/faustgertz/sassy-ink) fork from [@faustgertz](https://github.com/faustgertz), based on [Foundation for Emails (formerly Ink)](http://foundation.zurb.com/emails.html).
 
 ## Features
 
-The project has a `gulpfile.js`, which contains tasks for compiling the css file from an advanced [Sassy Ink](https://github.com/faustgertz/sassy-ink) version, and for moving the css styles inline in the provided html email templates.
+The project has a `gulpfile.js`, which contains tasks for compiling the css file from an advanced [Sassy Ink](https://github.com/faustgertz/sassy-ink) version, and for moving the css styles inline in the provided html email templates.<br>
+The inliner is completely independent from the Ink framework, which means that it works with any html email template.
 
 The compiled html files are optimized to work in every email client, for example it capitalizes the `Margin` and `Float` styles so [they will work on outlook.com](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins).
 
@@ -16,9 +17,9 @@ I stress out that `padding` is not supported on `<p>`, `<div>` and `<a>` tags, a
 
 If you avoid those pitfalls, then you can achieve pretty great compatibility.
 
-## Changes compared to the original version
+## Changes in Ink compared to the original version
 
-The original documentation at [http://zurb.com/ink/docs.php](http://zurb.com/ink/docs.php) is applicable in most parts.
+Ink's original documentation at [http://zurb.com/ink/docs.php](http://zurb.com/ink/docs.php) is applicable in most parts.
 
 ### Prefer block-grid instead of grid
 
@@ -42,7 +43,7 @@ Added the following new helper classes:
 - `text-right`: right aligning the text
 - `centered`: that one is not for text, it is centering the block level elements (for text, you can use Ink's built-in `center` class)
 
-## Customizing the sass build
+## Customizing Ink with sass
 
 > You can compile the default ink.scss file without doing any modifications.
 
@@ -64,13 +65,14 @@ If you are not familiar with Gulp, give it a try, it is fairly easy to setup and
 
 ### Available gulp tasks
 
-- `gulp sass`: compiles the default ink styles to `/css/ink.css`
-- `gulp custom-sass`: compiles the customized ink styles to `/css/ink-custom.css`, based on the customized `_settings.scss` file, which must be created based on the provided `_settings-default.scss` file
+- `gulp compile-ink`: compiles the default ink styles to `/css/ink.css`
+- `gulp compile-custom-ink`: compiles the customized ink styles to `/css/ink-custom.css`, based on the customized `_settings.scss` file, which must be created based on the provided `_settings-default.scss` file
 - `gulp inline-styles`: moving the style declarations to inline styles in all the `.html` files in the `templates-src` folder, written into the `templates-dist` folder
+- `gulp default`: runs the `compile-ink` and `inline-styles` tasks
 
 ## Compatibility
 
-The compiled html template will have the best possible email client compatibility, tested with [Litmus](https://litmus.com/) on a layout that utilizes the two column grid and three columns of the block-grid.
+The compiled html template will have the best possible email client compatibility, tested on an Ink based template with [Litmus](https://litmus.com/) on a layout that utilizes the two column grid and three columns of the block-grid.
 
 ### Tested with Litmus on the following clients
 
@@ -118,6 +120,7 @@ The compiled html template will have the best possible email client compatibilit
 
 ## Credit
 
+* [István Ujj-Mészáros](https://github.com/istvan-ujjmeszaros), the maintainer of this toolset
 * [Faust Gertz](https://github.com/faustgertz), who created the Sass version of the Ink framework
 * [ZURB](http://www.zurb.com), who created Foundation for Emails (formerly Ink), probably the best freely available responsive email framework
 * [René Meye](https://github.com/renemeye)'s [pull request #61](https://github.com/zurb/ink/pull/61) for Ink
