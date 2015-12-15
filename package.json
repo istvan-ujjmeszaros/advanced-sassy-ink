@@ -1,20 +1,20 @@
 {
   "name": "html-email-toolset",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Responsive html email toolset with great email client compatibility",
   "directories": {
     "doc": "docs"
   },
   "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "run-sequence": "^1.1.4",
     "gulp-juice-concat": "^1.1.2",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.1.0",
-    "run-sequence": "^1.1.4",
-    "gulp-inline-css": "^3.0.0",
-    "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/istvan-ujjmeszaros/html-email-toolset.git"
